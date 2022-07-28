@@ -27,13 +27,13 @@ public class ExperienciaController {
         return null;
     }
     
-    @DeleteMapping("/experiencia/borrar/{id}")
+    @DeleteMapping("/experiencia/{id}")
     public String deleteExp (@PathVariable Long id){
         interExp.deleteExp(id);
         return null;
     }
     
-    @PutMapping ("/experiencia/editar/{id}")
+    @PutMapping ("/experiencia/{id}")
     public Experiencia editExp (@PathVariable Long id,
                                 @RequestBody Experiencia request
 
@@ -43,6 +43,7 @@ public class ExperienciaController {
         exp.setPuesto(request.getPuesto());
         exp.setEmpresa(request.getEmpresa());
         exp.setPeriodo(request.getPeriodo());
+        exp.setPeriodoEnd(request.getPeriodoEnd());
         exp.setTareas(request.getTareas());        
         exp.setLogo(request.getLogo());
         interExp.saveExp(exp);

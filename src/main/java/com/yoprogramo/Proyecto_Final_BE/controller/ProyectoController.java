@@ -1,53 +1,53 @@
 package com.yoprogramo.Proyecto_Final_BE.controller;
 
-import com.yoprogramo.Proyecto_Final_BE.model.Experiencia;
-import com.yoprogramo.Proyecto_Final_BE.service.IExperienciaService;
+import com.yoprogramo.Proyecto_Final_BE.model.Proyecto;
+import com.yoprogramo.Proyecto_Final_BE.service.IProyectoService;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-public class ExperienciaController {
+public class ProyectoController {
     @Autowired
-    private IExperienciaService interExp;
+    private IProyectoService interProy;
     
-    @GetMapping ("/experiencia")
-    public List<Experiencia> getExps(){
-        return interExp.getExp();
+    @GetMapping ("/proyecto")
+    public List<Proyecto> getProyecto(){
+        return interProy.getProyecto();
     }
     
-    @GetMapping ("/experiencia/{id}")
-    public Experiencia getExpById(@PathVariable Long id){
-    return interExp.findExp(id);
+    @GetMapping ("/proyecto/{id}")
+    public Proyecto getProyectoById(@PathVariable Long id){
+    return interProy.findProyecto(id);
     }
     
-    @PostMapping ("/experiencia")
-    public String createExp(@RequestBody Experiencia exp){
-        interExp.saveExp(exp);
+    @PostMapping ("/proyecto")
+    public String createProyecto(@RequestBody Proyecto proy){
+        interProy.saveProyecto(proy);
         return null;
     }
     
-    @DeleteMapping("/experiencia/borrar/{id}")
-    public String deleteExp (@PathVariable Long id){
-        interExp.deleteExp(id);
+    @DeleteMapping("/proyecto/{id}")
+    public String deleteProyecto (@PathVariable Long id){
+        interProy.deleteProyecto(id);
         return null;
     }
     
-    @PutMapping ("/experiencia/editar/{id}")
-    public Experiencia editExp (@PathVariable Long id,
-                                @RequestBody Experiencia request
+    @PutMapping ("/proyecto/{id}")
+    public Proyecto editProyecto (@PathVariable Long id,
+                                @RequestBody Proyecto request
 
                                 ){
-        Experiencia exp = interExp.findExp(id);
+        Proyecto proy = interProy.findProyecto(id);
         
-        exp.setPuesto(request.getPuesto());
-        exp.setEmpresa(request.getEmpresa());
-        exp.setPeriodo(request.getPeriodo());
-        exp.setTareas(request.getTareas());        
-        exp.setLogo(request.getLogo());
-        interExp.saveExp(exp);
+        proy.setNombre(request.getNombre());
+        proy.setAbout(request.getAbout());
+        proy.setPeriodo(request.getPeriodo());
+        proy.setLink(request.getLink());        
+        proy.setLogo(request.getLogo());
+        interProy.saveProyecto(proy);
 
         
-        return exp;
+        return proy;
     }
 }

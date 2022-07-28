@@ -5,14 +5,14 @@ import lombok.*;
 
 @Getter @Setter
 @Entity
-public class Estudio {
+public class Proyecto {
     
     @Id
     @GeneratedValue(strategy=GenerationType.SEQUENCE)
     private Long id;
-    private String institucion;
+    private String nombre;
     private String logo;
-    private String titulo;
-    private String periodo;
-    private String detalles;
+    private String about;
+    private int periodo;
+    private String link;
 }

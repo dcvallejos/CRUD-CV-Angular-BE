@@ -1,17 +1,17 @@
 package com.yoprogramo.Proyecto_Final_BE.service;
 
-import com.yoprogramo.Proyecto_Final_BE.model.Estudio;
+import com.yoprogramo.Proyecto_Final_BE.model.Skill;
 import java.util.List;
 
 
-public interface IEstudioService {
+public interface ISkillService {
     
-    public List<Estudio> getStudy();
+    public List<Skill> getSkill();
     
-    public void saveStudy (Estudio study);
+    public void saveSkill (Skill skill);
     
-    public void deleteStudy (Long id);
+    public void deleteSkill (Long id);
     
-    public Estudio findStudy (Long id);
+    public Skill findSkill (Long id);
     
 }

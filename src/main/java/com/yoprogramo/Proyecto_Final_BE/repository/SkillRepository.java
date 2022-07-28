@@ -1,10 +1,10 @@
 package com.yoprogramo.Proyecto_Final_BE.repository;
 
-import com.yoprogramo.Proyecto_Final_BE.model.Estudio;
+import com.yoprogramo.Proyecto_Final_BE.model.Skill;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface EstudioRepository extends JpaRepository<Estudio, Long> {
+public interface SkillRepository extends JpaRepository<Skill, Long> {
     
 }

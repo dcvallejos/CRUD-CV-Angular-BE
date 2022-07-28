@@ -13,6 +13,7 @@ public class Estudio {
     private String institucion;
     private String logo;
     private String titulo;
-    private String periodo;
+    private int periodo;
+    private int periodoEnd;
     private String detalles;
 }

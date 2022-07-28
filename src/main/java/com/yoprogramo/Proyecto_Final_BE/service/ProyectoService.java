@@ -1,37 +1,37 @@
 
 package com.yoprogramo.Proyecto_Final_BE.service;
 
-import com.yoprogramo.Proyecto_Final_BE.model.Estudio;
-import com.yoprogramo.Proyecto_Final_BE.repository.EstudioRepository;
+import com.yoprogramo.Proyecto_Final_BE.model.Proyecto;
+import com.yoprogramo.Proyecto_Final_BE.repository.ProyectoRepository;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
-public class EstudioService implements IEstudioService{
+public class ProyectoService implements IProyectoService{
     @Autowired
-    private EstudioRepository estRepo;
+    private ProyectoRepository proyRepo;
 
     @Override
-    public List<Estudio> getStudy() {
-        List<Estudio> listaStudy = estRepo.findAll();
-        return listaStudy;     
+    public List<Proyecto> getProyecto() {
+        List<Proyecto> listaProyecto = proyRepo.findAll();
+        return listaProyecto;     
     }
 
     @Override
-    public void saveStudy(Estudio study) {
-        estRepo.save(study);
+    public void saveProyecto(Proyecto proy) {
+        proyRepo.save(proy);
     }
 
     @Override
-    public void deleteStudy(Long id) {
-        estRepo.deleteById(id);
+    public void deleteProyecto(Long id) {
+        proyRepo.deleteById(id);
     }
 
     @Override
-    public Estudio findStudy(Long id) {
-        Estudio est = estRepo.findById(id).orElse(null);
-        return est;
+    public Proyecto findProyecto(Long id) {
+        Proyecto proy = proyRepo.findById(id).orElse(null);
+        return proy;
     }
 
 }

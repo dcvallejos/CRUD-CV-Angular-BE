@@ -16,19 +16,19 @@ public class PersonaController {
         return interPersona.getPersonas();
     }
     
-    @PostMapping ("/personas/crear")
+    @PostMapping ("/personas")
     public String createUser(@RequestBody Persona perso){
         interPersona.savePersona(perso);
         return "El usuario fue creado correctamente";
     }
     
-    @DeleteMapping("/personas/borrar/{id}")
+    @DeleteMapping("/personas/{id}")
     public String deletePersona (@PathVariable Long id){
         interPersona.deletePersona(id);
         return "La persona fue eliminada correctamente";
     }
     
-    @PutMapping ("/personas/editar/{id}")
+    @PutMapping ("/personas/{id}")
     public Persona editPersona (@PathVariable Long id,
                                 @RequestBody Persona request
 

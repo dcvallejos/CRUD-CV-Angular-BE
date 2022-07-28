@@ -1,17 +1,17 @@
 package com.yoprogramo.Proyecto_Final_BE.service;
 
-import com.yoprogramo.Proyecto_Final_BE.model.Estudio;
+import com.yoprogramo.Proyecto_Final_BE.model.Proyecto;
 import java.util.List;
 
 
-public interface IEstudioService {
+public interface IProyectoService {
     
-    public List<Estudio> getStudy();
+    public List<Proyecto> getProyecto();
     
-    public void saveStudy (Estudio study);
+    public void saveProyecto (Proyecto proyect);
     
-    public void deleteStudy (Long id);
+    public void deleteProyecto (Long id);
     
-    public Estudio findStudy (Long id);
+    public Proyecto findProyecto (Long id);
     
 }

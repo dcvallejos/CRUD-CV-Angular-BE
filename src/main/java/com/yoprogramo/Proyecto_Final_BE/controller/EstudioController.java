@@ -17,7 +17,7 @@ public class EstudioController {
         return interStudy.getStudy();
     }
     @GetMapping ("/estudio/{id}")
-    public Estudio getsTUDYById(@PathVariable Long id){
+    public Estudio getStudyById(@PathVariable Long id){
     return interStudy.findStudy(id);
     }
     
@@ -43,6 +43,7 @@ public class EstudioController {
         study.setTitulo(request.getTitulo());
         study.setInstitucion(request.getInstitucion());
         study.setPeriodo(request.getPeriodo());
+        study.setPeriodoEnd(request.getPeriodoEnd());
         study.setLogo(request.getLogo());        
         study.setDetalles(request.getDetalles());
         interStudy.saveStudy(study);

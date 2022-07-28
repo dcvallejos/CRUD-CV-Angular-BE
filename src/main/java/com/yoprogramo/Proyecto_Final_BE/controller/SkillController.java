@@ -1,53 +1,51 @@
 package com.yoprogramo.Proyecto_Final_BE.controller;
 
-import com.yoprogramo.Proyecto_Final_BE.model.Experiencia;
-import com.yoprogramo.Proyecto_Final_BE.service.IExperienciaService;
+import com.yoprogramo.Proyecto_Final_BE.model.Skill;
+import com.yoprogramo.Proyecto_Final_BE.service.ISkillService;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-public class ExperienciaController {
+public class SkillController {
     @Autowired
-    private IExperienciaService interExp;
+    private ISkillService interSkill;
     
-    @GetMapping ("/experiencia")
-    public List<Experiencia> getExps(){
-        return interExp.getExp();
+    @GetMapping ("/skill")
+    public List<Skill> getSkill(){
+        return interSkill.getSkill();
     }
     
-    @GetMapping ("/experiencia/{id}")
-    public Experiencia getExpById(@PathVariable Long id){
-    return interExp.findExp(id);
+    @GetMapping ("/skill/{id}")
+    public Skill getSkillById(@PathVariable Long id){
+    return interSkill.findSkill(id);
     }
     
-    @PostMapping ("/experiencia")
-    public String createExp(@RequestBody Experiencia exp){
-        interExp.saveExp(exp);
+    @PostMapping ("/skill")
+    public String createSkill(@RequestBody Skill skill){
+        interSkill.saveSkill(skill);
         return null;
     }
     
-    @DeleteMapping("/experiencia/borrar/{id}")
+    @DeleteMapping("/skill/{id}")
     public String deleteExp (@PathVariable Long id){
-        interExp.deleteExp(id);
+        interSkill.deleteSkill(id);
         return null;
     }
     
-    @PutMapping ("/experiencia/editar/{id}")
-    public Experiencia editExp (@PathVariable Long id,
-                                @RequestBody Experiencia request
+    @PutMapping ("/skill/{id}")
+    public Skill editSkill (@PathVariable Long id,
+                                @RequestBody Skill request
 
                                 ){
-        Experiencia exp = interExp.findExp(id);
+        Skill skill = interSkill.findSkill(id);
         
-        exp.setPuesto(request.getPuesto());
-        exp.setEmpresa(request.getEmpresa());
-        exp.setPeriodo(request.getPeriodo());
-        exp.setTareas(request.getTareas());        
-        exp.setLogo(request.getLogo());
-        interExp.saveExp(exp);
+        skill.setNombre(request.getNombre());
+        skill.setPuntaje(request.getPuntaje());
+
+        interSkill.saveSkill(skill);
 
         
-        return exp;
+        return skill;
     }
 }
