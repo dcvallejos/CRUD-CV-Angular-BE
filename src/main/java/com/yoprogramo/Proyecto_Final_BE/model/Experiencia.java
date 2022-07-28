@@ -12,7 +12,7 @@ public class Experiencia {
     private String puesto;
     private String logo;
     private String empresa;
-    private int periodo;
-    private int periodoEnd;
+    private String periodo;
+    private String periodoEnd;
     private String tareas;
 }

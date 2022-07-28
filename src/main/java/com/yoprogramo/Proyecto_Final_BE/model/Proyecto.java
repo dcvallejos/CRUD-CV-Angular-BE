@@ -13,6 +13,6 @@ public class Proyecto {
     private String nombre;
     private String logo;
     private String about;
-    private int periodo;
+    private String periodo;
     private String link;
 }
