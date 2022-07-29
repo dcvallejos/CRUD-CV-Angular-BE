@@ -15,5 +15,5 @@ public class Experiencia {
     private String periodo;
     private String periodoEnd;
     private String tareas;
-    private int index;
+    private int indice;
 }
