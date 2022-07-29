@@ -46,6 +46,7 @@ public class ExperienciaController {
         exp.setPeriodoEnd(request.getPeriodoEnd());
         exp.setTareas(request.getTareas());        
         exp.setLogo(request.getLogo());
+        exp.setIndex(request.getIndex());
         interExp.saveExp(exp);
 
         
