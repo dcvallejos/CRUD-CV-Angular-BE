@@ -46,6 +46,7 @@ public class EstudioController {
         study.setPeriodoEnd(request.getPeriodoEnd());
         study.setLogo(request.getLogo());        
         study.setDetalles(request.getDetalles());
+        study.setIndice(request.getIndice());
         interStudy.saveStudy(study);
 
         

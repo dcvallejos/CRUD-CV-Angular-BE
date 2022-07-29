@@ -16,4 +16,5 @@ public class Estudio {
     private String periodo;
     private String periodoEnd;
     private String detalles;
+    private int indice;
 }
