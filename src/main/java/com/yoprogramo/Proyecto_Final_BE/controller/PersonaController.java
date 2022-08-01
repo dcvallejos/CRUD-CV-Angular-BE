@@ -17,14 +17,12 @@ public class PersonaController {
         return interPersona.getPersonas();
     }
     
-    @PreAuthorize("hasRole('ADMIN')")
     @PostMapping ("/personas")
     public String createUser(@RequestBody Persona perso){
         interPersona.savePersona(perso);
         return "El usuario fue creado correctamente";
     }
     
-    @PreAuthorize("hasRole('ADMIN')")
     @DeleteMapping("/personas/{id}")
     public String deletePersona (@PathVariable Long id){
         interPersona.deletePersona(id);
