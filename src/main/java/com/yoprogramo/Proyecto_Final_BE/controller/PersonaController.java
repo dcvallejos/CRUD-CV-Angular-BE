@@ -4,6 +4,7 @@ import com.yoprogramo.Proyecto_Final_BE.model.Persona;
 import com.yoprogramo.Proyecto_Final_BE.service.IPersonaService;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 @RestController
 public class PersonaController {
@@ -16,12 +17,14 @@ public class PersonaController {
         return interPersona.getPersonas();
     }
     
+    @PreAuthorize("hasRole('ADMIN')")
     @PostMapping ("/personas")
     public String createUser(@RequestBody Persona perso){
         interPersona.savePersona(perso);
         return "El usuario fue creado correctamente";
     }
     
+    @PreAuthorize("hasRole('ADMIN')")
     @DeleteMapping("/personas/{id}")
     public String deletePersona (@PathVariable Long id){
         interPersona.deletePersona(id);
